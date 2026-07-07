@@ -14,7 +14,6 @@ class Solution {
         return days;
     }
     public int shipWithinDays(int[] weights, int days) {
-        int n=weights.length;
         int low=0;
         int high=0;
         int ans=0;
