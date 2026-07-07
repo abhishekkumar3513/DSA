@@ -1,18 +1,18 @@
 class Solution {
-    public long count(int[] bloomDay,int mid,int k){
-        long count=0;
-        long bouquets=0;
+    public int bloom(int[] bloomDay,int day,int k){
+        int consecutiveFlowers=0;
+        int bouquetCount=0;
         for(int i=0;i<bloomDay.length;i++){
-            if(bloomDay[i]<=mid){
-                count++;
+            if(bloomDay[i]<=day){
+                consecutiveFlowers++;
             }
             else{
-                bouquets+=count/k;
-                count=0;
+                bouquetCount+=consecutiveFlowers/k;
+                consecutiveFlowers=0;
             }
         }
-        bouquets+=count/k;
-        return bouquets;
+        bouquetCount+=consecutiveFlowers/k;
+        return bouquetCount;
     }
     public int minDays(int[] bloomDay, int m, int k) {
         int n=bloomDay.length;
@@ -20,7 +20,7 @@ class Solution {
             return -1;
         }
         int low=Integer.MAX_VALUE;
-        int high=Integer.MIN_VALUE;
+        int high=0;
         int ans=0;
         for(int i=0;i<n;i++){
             low=Math.min(low,bloomDay[i]);
@@ -28,7 +28,7 @@ class Solution {
         }
         while(low<=high){
             int mid=(low+high)/2;
-            long value=count(bloomDay,mid,k);
+            int value=bloom(bloomDay,mid,k);
             if(value>=m){
                 ans=mid;
                 high=mid-1;
