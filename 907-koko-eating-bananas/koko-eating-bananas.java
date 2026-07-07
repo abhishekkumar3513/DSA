@@ -1,9 +1,9 @@
 class Solution {
 
-    public long canEat(int[] piles,int h){
+    public long calculateTotalHours(int[] piles,int speed){
         long totalhours=0;
         for(int i=0;i<piles.length;i++){
-            totalhours+=(int)Math.ceil((double) piles[i]/(double) h);
+            totalhours+=(int)Math.ceil((double) piles[i]/(double) speed);
         }
         return totalhours;
     }
@@ -16,8 +16,8 @@ class Solution {
         }
         while(low<=high){
             int mid=(low+high)/2;
-            long values=canEat(piles,mid);
-            if(values<=h){
+            long totalhour=calculateTotalHours(piles,mid);
+            if(totalhour<=h){
                 ans=mid;
                 high=mid-1;
             }
