@@ -9,9 +9,9 @@
  * }
  */
 class Solution {
-    public ListNode reverseLinkedlist(ListNode head){
-        ListNode curr=head;
+    public ListNode reverseLinkedList(ListNode head){
         ListNode prev=null;
+        ListNode curr=head;
         while(curr!=null){
             ListNode next=curr.next;
             curr.next=prev;
@@ -20,26 +20,23 @@ class Solution {
         }
         return prev;
     }
-    public boolean isPalindrome(ListNode head) { 
+    public boolean isPalindrome(ListNode head) {
         ListNode slow=head;
         ListNode fast=head;
         while(fast.next!=null && fast.next.next!=null){
             slow=slow.next;
             fast=fast.next.next;
         }
-        ListNode newHead=reverseLinkedlist(slow.next);
+        ListNode newHead=reverseLinkedList(slow.next);
         ListNode first=head;
         ListNode second=newHead;
         while(second!=null){
             if(first.val!=second.val){
-                reverseLinkedlist(newHead);
                 return false;
             }
             first=first.next;
             second=second.next;
         }
-        reverseLinkedlist(newHead);
         return true;
-
     }
 }
