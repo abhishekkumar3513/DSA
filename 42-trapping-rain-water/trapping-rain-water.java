@@ -4,8 +4,8 @@ class Solution {
         if(n==0){
             return 0;
         }
-        int leftmax[]=new int[n];
-        int rightmax[]=new int[n];
+        int [] leftmax=new int[n];
+        int [] rightmax=new int[n];
         leftmax[0]=height[0];
         rightmax[n-1]=height[n-1];
         for(int i=1;i<n;i++){
@@ -16,9 +16,8 @@ class Solution {
         }
         int totalWater=0;
         for(int i=0;i<n;i++){
-            totalWater+=Math.min(rightmax[i],leftmax[i])-height[i];
+            totalWater+=Math.min(leftmax[i],rightmax[i])-height[i];
         }
         return totalWater;
-        
     }
 }
