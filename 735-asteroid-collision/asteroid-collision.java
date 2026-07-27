@@ -14,11 +14,11 @@ class Solution {
                     stack.pop();
                 }
                 else if(stack.isEmpty() || stack.peek()<0){
-                    stack.push(asteroids[i]);
+                        stack.push(asteroids[i]);
                 }
-            }
+            }            
         }
-        int ans[]=new int[stack.size()];
+        int [] ans=new int[stack.size()];
         for(int i=stack.size()-1;i>=0;i--){
             ans[i]=stack.pop();
         }
