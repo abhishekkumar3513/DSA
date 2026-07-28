@@ -1,8 +1,8 @@
 class Solution {
     public int sumSubarrayMins(int[] arr) {
         int n=arr.length;
-        int[] left=new int[n];
-        int[] right=new int[n];
+        int [] left=new int[n];
+        int [] right=new int[n];
         Stack<Integer>stack=new Stack<>();
         for(int i=0;i<n;i++){
             while(!stack.isEmpty() && arr[stack.peek()]>arr[i]){
@@ -32,9 +32,9 @@ class Solution {
         long MOD=1000000007;
         long ans=0;
         for(int i=0;i<n;i++){
-            long contribution=(long)arr[i]*left[i]*right[i];
+            long contribution=(long) arr[i] * left[i] * right[i];
             ans=(ans+contribution)%MOD;
         }
-        return (int) ans;
+        return (int)ans;
     }
 }
