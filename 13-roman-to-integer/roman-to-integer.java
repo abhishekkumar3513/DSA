@@ -8,16 +8,16 @@ class Solution {
         map.put('C',100);
         map.put('D',500);
         map.put('M',1000);
-        int total=0;
+        int value=0;
         for(int i=0;i<s.length();i++){
             int current=map.get(s.charAt(i));
             if(i+1<s.length() && current<map.get(s.charAt(i+1))){
-                total-=current;
+                value-=current;
             }
             else{
-                total+=current;
+                value+=current;
             }
         }
-        return total;
+        return value;
     }
 }
