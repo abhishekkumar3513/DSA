@@ -1,6 +1,5 @@
 class Solution {
     public String Palindrome(String s,int left,int right){
-        StringBuilder sb=new StringBuilder();
         while(left>=0 && right<s.length() && s.charAt(left)==s.charAt(right)){
             left--;
             right++;
@@ -12,10 +11,11 @@ class Solution {
         for(int i=0;i<s.length();i++){
             String odd=Palindrome(s,i,i);
             String even=Palindrome(s,i,i+1);
+
             if(odd.length() > longest.length()){
                 longest=odd;
             }
-            if(even.length()> longest.length()){
+            if(even.length()>longest.length()){
                 longest=even;
             }
         }
