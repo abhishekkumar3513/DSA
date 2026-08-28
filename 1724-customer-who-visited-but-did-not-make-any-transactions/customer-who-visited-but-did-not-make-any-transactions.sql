@@ -1,0 +1,2 @@
+-- Write your PostgreSQL query statement below
+Select v.customer_id ,count(*) As count_no_trans from Visits v left Join Transactions t on v.visit_id=t.visit_id where t.transaction_id IS NULL  GROUP BY v.customer_id;
