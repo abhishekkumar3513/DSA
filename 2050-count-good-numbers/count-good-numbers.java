@@ -3,8 +3,8 @@ class Solution {
     public int countGoodNumbers(long n) {
         long even=(n+1)/2;
         long odd=(n/2);
-        long first=power(5,even)%MOD;
-        long second=power(4,odd)%MOD;
+        long first=power(5,even);
+        long second=power(4,odd);
         return (int)((first*second)%MOD);
     }
     public long power(long x,long n){
@@ -15,6 +15,9 @@ class Solution {
         if(n%2==0){
             return (half*half)%MOD;
         }
-        return (x*half*half)%MOD;
+        else{
+            return (x*half*half)%MOD;
+        }
+        
     }
 }
