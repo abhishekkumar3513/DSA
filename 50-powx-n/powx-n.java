@@ -7,7 +7,7 @@ class Solution {
         }
         return power(x,exponent);
     }
-    public double power(double x,long n){
+    public double power(double x, long n){
         if(n==0){
             return 1;
         }
