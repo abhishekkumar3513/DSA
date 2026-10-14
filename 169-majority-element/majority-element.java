@@ -5,14 +5,11 @@ class Solution {
         for(int num:nums){
             map.put(num,map.getOrDefault(num,0)+1);
         }
-        int answer=nums[0];
-        int max=0;
         for(Map.Entry<Integer,Integer>entry:map.entrySet()){
-            if(entry.getValue()>max){
-                max=entry.getValue();
-                answer=entry.getKey();
+            if(entry.getValue()>n/2){
+                return entry.getKey();
             }
         }
-        return answer;
+        return -1;
     }
 }
