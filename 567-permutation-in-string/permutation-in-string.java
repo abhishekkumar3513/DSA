@@ -7,9 +7,10 @@ class Solution {
         }
         int[] need=new int[26];
         int[] window=new int[26];
-        for(int i=0;i<n1;i++){
-            need[s1.charAt(i)-'a']++;
-            window[s2.charAt(i)-'a']++;
+        int left=0;
+        for(int right=0;right<n1;right++){
+            need[s1.charAt(right)-'a']++;
+            window[s2.charAt(right)-'a']++;
         }
         if(Arrays.equals(need,window)){
             return true;
