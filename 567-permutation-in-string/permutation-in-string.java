@@ -5,8 +5,8 @@ class Solution {
         if(n1>n2){
             return false;
         }
-        int [] need=new int[26];
-        int [] window=new int[26];
+        int[] need=new int[26];
+        int[] window=new int[26];
         for(int i=0;i<n1;i++){
             need[s1.charAt(i)-'a']++;
             window[s2.charAt(i)-'a']++;
@@ -21,6 +21,6 @@ class Solution {
                 return true;
             }
         }
-        return false;    
+        return false;
     }
 }
