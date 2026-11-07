@@ -3,11 +3,11 @@ class Solution {
         if(x<2){
             return x;
         }
-        int low=1;
+        int low=0;
         int high=x;
         int ans=0;
         while(low<=high){
-            int mid=low+(high-low)/2;
+            int mid=(low+high)/2;
             if((long)mid*mid<=x){
                 ans=mid;
                 low=mid+1;
