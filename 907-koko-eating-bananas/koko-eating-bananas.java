@@ -1,11 +1,10 @@
 class Solution {
-
-    public long calculateTotalHours(int[] piles,int speed){
-        long totalhours=0;
+    public int calculateTotalhours(int[] piles,int k){
+        int totalHours=0;
         for(int i=0;i<piles.length;i++){
-            totalhours+=(int)Math.ceil((double) piles[i]/(double) speed);
+            totalHours+=Math.ceil((double)piles[i]/k);
         }
-        return totalhours;
+        return totalHours;
     }
     public int minEatingSpeed(int[] piles, int h) {
         int low=1;
@@ -15,9 +14,9 @@ class Solution {
             high=Math.max(high,piles[i]);
         }
         while(low<=high){
-            int mid=(low+high)/2;
-            long totalhour=calculateTotalHours(piles,mid);
-            if(totalhour<=h){
+            int mid=low+(high-low)/2;
+            int result=calculateTotalhours(piles,mid);
+            if(result<=h){
                 ans=mid;
                 high=mid-1;
             }
@@ -26,6 +25,5 @@ class Solution {
             }
         }
         return ans;
-
     }
 }
